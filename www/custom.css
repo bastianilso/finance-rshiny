@@ -1,0 +1,162 @@
+body {
+    padding: 15px;
+  	max-width: 1080px; 
+  	margin: 0 auto !important; 
+  	float: none !important; 
+}
+
+.main-content {
+  padding: 15px;
+}
+
+header {
+  margin-bottom: 25px;
+}
+
+}
+#sidebar {
+    max-width: 250px;
+}
+
+#overall-nav {
+    min-width: 7.2rem;
+    font-size: 1.1rem;
+}
+
+button#visButton {
+    margin-top: 20px;
+}
+
+.vis-plot {
+  width: 100%;
+}
+
+.mini-progress-bar {
+	background-color: #e0e0e0;
+	padding: 2px;
+	border-radius: 2px;
+}
+
+.mini-progress-bar-fill {
+	display: block;
+	height: 12px;
+	background-color: #659cef;
+	border-radius: 2px;
+}
+
+.tab-content {
+    min-height: 50%;
+}
+
+.tab-content .nav a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+footer {
+    background: no-repeat url("hmi-lab.svg");
+    height: 50px;
+    margin-top: 15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.d-inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.separated {
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.contextual-toolbar > * {
+  float: left;
+  margin: 0 24px;
+}
+
+.shiny-output-error-vis {
+
+    color: #888;
+    text-align: center;
+    width: 100%;
+    padding-top: 5em;
+    background-color: #EFEFEF;
+    background: no-repeat center url("placeholder-graph.svg");
+    min-height: 300px;
+    border: 1px solid lightgrey;
+}
+
+.vizcontrols-explainer {
+    background: no-repeat url("pan-zoom.svg");
+    height: 35px;
+    width: 100%;
+    display: inline-block;
+}
+
+.tab-pane > .main-content {
+    overflow-x: hidden;
+}
+
+.navbar-brand {
+    font-size: 12px;
+    padding: 15px 0px;
+}
+
+/* Styling of Check-boxes :horizontal */
+.checkbox-inline, .radio-inline {
+    padding: 0;
+    padding-top: 2px;
+}
+
+.checkbox-inline + .checkbox-inline {
+  margin-left: 0;
+}
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] ~span {
+    background: #efefef;
+    border-radius: 3px 3px 3px 3px;
+    color: #888;
+    border: 1px solid #efefef;
+    padding: 0 3px;
+}
+
+.form-group input[type="checkbox"]:checked ~span {
+    color: #fff;
+    background-color: #337ab7;
+    border: 1px solid #337ab7;
+}
+
+.form-group input[type="checkbox"]:hover ~span {
+    border: 1px solid #666;
+    background-color: #4d8fcd;
+}
+
+.form-group input[type="checkbox"]:hover:not(:checked) ~span {
+    color: #666;
+    border: 1px solid #888;
+    background-color: #bbbdbe;
+}
+
+.checkbox-inline span {
+    display: inline-block;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.form-group > label {
+  display: none;
+}
+
+label {
+    margin-bottom: 0;
+    font-weight: normal;
+}
