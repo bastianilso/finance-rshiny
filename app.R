@@ -83,12 +83,13 @@ server <- function(input, output, session) {
                                icon= newcat$icon,
                                event= "new_category",
                                eventid = new_id,
-                               timestamp = newcat$timestamp,
+                               timestampTo = newcat$timestampTo,
+                               timestampFrom = timestampTo,
                                submitted = as.POSIXct(now(tzone = ""), format = "%Y-%m-%d %H:%M:%OS"))
       insertTab("categorynav",
                 select = TRUE,
                 target = "All",
-                tab = tabPanel(title = div(class="text-center", icon(newcat$icon)),
+                tab = tabPanel(title = div(class="text-center btn-outline-primary", icon(newcat$icon)),
                              id = newcat$name,
                              value = newcat$name,
                              div(class="main-content",
@@ -103,7 +104,8 @@ server <- function(input, output, session) {
     observeEvent(newval$trigger, {
       req(newval$trigger > 0)
       new_id <- max(r$df$eventid, na.rm=T) + 1
-      r$df <- r$df %>% add_row(timestamp = newval$timestamp,
+      r$df <- r$df %>% add_row(timestampTo = newval$timestampTo,
+                               timestampFrom = newval$timestampFrom,
                                 label= newval$label,
                                 amount= newval$amount,
                                 submitted = as.POSIXct(now(tzone = ""), format = "%Y-%m-%d %H:%M:%OS"),

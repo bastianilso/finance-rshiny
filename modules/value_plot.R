@@ -38,12 +38,12 @@ value_plot_server <- function(input, output, session, cat, df) {
     today = as.POSIXct(now(tzone = ""), format = "%Y-%m-%d %H:%M:%OS")
     month_cap = 12
     date_limit = today - months(month_cap)
-    cat_df = cat_df %>% mutate(within_range = ifelse(timestamp > date_limit, month_cap,NA))
+    cat_df = cat_df %>% mutate(within_range = ifelse(timestampTo > date_limit, month_cap,NA))
     
     max_expense = cat_df %>% filter(!is.na(within_range)) %>%
       summarize(amount = max(amount, na.rm=T))
     yaxis_upper = as.integer(max_expense + 250)
-    max_date = max(cat_df$timestamp, na.rm=T)
+    max_date = max(cat_df$timestampTo, na.rm=T)
     
     yaxis_tick = 100
     yaxis_tick = ifelse(max_expense > 1000, 250, yaxis_tick)
@@ -53,7 +53,7 @@ value_plot_server <- function(input, output, session, cat, df) {
     
     mcosts <- c_monthcosts(df() %>% filter(category == cat))
     vistemplate %>%
-      add_trace(name="Expenses", data=cat_df, x=~floor_date(timestamp,"month"), y=~amount,
+      add_trace(name="Expenses", data=cat_df, x=~floor_date(timestampTo,"month"), y=~amount,
                 type="bar", color=I('white'), marker=list(line=list(width=1.5, color='rgb(51,122,183)')),
                 text=~paste(str_trunc(label,10),'<br>',sprintf("%.0f", amount),"kr."), textfont=list(size=16, color='rgb(51,122,183)'), textposition="outside") %>%
       add_trace(name="Monthly Average", x=c(date_limit,today+months(1)), y=c(monthly_cost$amount,monthly_cost$amount),

@@ -1,8 +1,12 @@
 body {
     padding: 15px;
-  	max-width: 1080px; 
+
   	margin: 0 auto !important; 
   	float: none !important; 
+}
+
+body > .container-fluid {
+   max-width: 1080px; 
 }
 
 .main-content {
@@ -111,14 +115,17 @@ footer {
     padding-top: 2px;
 }
 
-.checkbox-inline + .checkbox-inline {
+.checkbox-inline + .checkbox-inline,
+.radio-inline + .radio-inline {
   margin-left: 0;
 }
-.form-group input[type="checkbox"] {
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
     display: none;
 }
 
-.form-group input[type="checkbox"] ~span {
+.form-group input[type="checkbox"] ~span,
+.form-group input[type="radio"] ~span {
     background: #efefef;
     border-radius: 3px 3px 3px 3px;
     color: #888;
@@ -126,24 +133,28 @@ footer {
     padding: 0 3px;
 }
 
-.form-group input[type="checkbox"]:checked ~span {
+.form-group input[type="checkbox"]:checked ~span,
+.form-group input[type="radio"]:checked ~span {
     color: #fff;
     background-color: #337ab7;
     border: 1px solid #337ab7;
 }
 
-.form-group input[type="checkbox"]:hover ~span {
+.form-group input[type="checkbox"]:hover ~span,
+.form-group input[type="radio"]:hover ~span {
     border: 1px solid #666;
     background-color: #4d8fcd;
 }
 
-.form-group input[type="checkbox"]:hover:not(:checked) ~span {
+.form-group input[type="checkbox"]:hover:not(:checked) ~span,
+.form-group input[type="radio"]:hover:not(:checked) ~span {
     color: #666;
     border: 1px solid #888;
     background-color: #bbbdbe;
 }
 
-.checkbox-inline span {
+.checkbox-inline span,
+.radio-inline span {
     display: inline-block;
     min-width: 40px;
     height: 30px;

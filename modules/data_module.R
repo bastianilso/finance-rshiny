@@ -33,3 +33,18 @@ data_load <- function() {
 #    eventid = 0
 #  )
  
+# NEXT EDTION:
+# df <- tibble(
+#    timestampFrom = as.POSIXct("2022-01-01 13:30:15.1234", format = "%Y-%m-%d %H:%M:%OS"),
+#    timestampTo = as.POSIXct("2022-01-01 13:30:15.1234", format = "%Y-%m-%d %H:%M:%OS"),
+#    amount = 0.00,
+#    submitted = as.POSIXct(now(tzone = ""), format = "%Y-%m-%d %H:%M:%OS"),
+#    label = "Starting Point",
+#    category = "Test",
+#    icon = "heart",
+#    user = "Test",
+#    event = "new_category",
+#    eventid = 0
+#  )
+
+# TODO: Update calculators to consider time ranges, rather than single dates.

@@ -13,11 +13,11 @@ value_table_server <- function(input, output, session, cat, df) {
 
   output$valueTable <- renderDataTable({
    cat_df <- df() %>% filter(category == cat, event == "new_value")
-   cat_df <- cat_df %>% select(eventid, timestamp,label, amount) %>%
-     arrange(desc(timestamp)) %>%
-     mutate(timestamp = format(date(as.character(timestamp)), "%d %b %Y"),
+   cat_df <- cat_df %>% select(eventid, timestampTo,label, amount) %>%
+     arrange(desc(timestampTo)) %>%
+     mutate(timestampTo = format(date(as.character(timestampTo)), "%d %b %Y"),
             amount = sprintf("%.2f", amount)) %>%
-     rename(`Date` = timestamp, `Amount` = amount, `Name` = label, ` ` = eventid) 
+     rename(`Date` = timestampTo, `Amount` = amount, `Name` = label, ` ` = eventid) 
 
    dtable = datatable(cat_df, options = list(pageLength = 50, dom='frtp'), rownames= FALSE)
    return(dtable)
